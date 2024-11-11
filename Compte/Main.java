@@ -15,13 +15,15 @@ public class Main {
         System.out.println("Que souhaitez-vous faire?");
         System.out.println("Appuyez sur 1 pour ajouter de l'argent au solde, 2 pour en retirer.");
         int action = sc.nextInt();
-        Compte.Action(action, solde);
 
-        System.out.println("Souhaitez-vous effectuer une autre action sur le compte? Oui ou non.");
+        //Permet d'actualiser le solde!!
+        solde = Compte.Action(action, solde);
+
+        System.out.println("Souhaitez-vous effectuer une autre action sur le compte? (oui/non)");
         String choix = sc.next();
-        System.out.println("Appuyez sur 1 pour ajouter de l'argent au solde, 2 pour en retirer.");
-        sc.nextInt();
-        Compte.Action(action, solde);
+        Compte.Choix(choix, action, solde);
+
+        System.out.println("Merci et à bientôt!");
         sc.close();
     }
 }
